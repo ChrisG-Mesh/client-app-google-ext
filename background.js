@@ -2,7 +2,7 @@
 
 // Function to make API call
 function makeAPICall() {
-  const apiUrl = 'testurl';
+  const apiUrl = '';
 
   return fetch(apiUrl, {
       method: 'GET',
@@ -27,4 +27,5 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
               sendResponse({ success: false, error: error });
           });
       return true;
+  }
 });
