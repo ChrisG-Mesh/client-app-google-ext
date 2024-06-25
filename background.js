@@ -1,5 +1,5 @@
 function makeAPICall(sendResponse) {
-    fetch(`${process.env.NEXT_LOCAL_URL}/api/makeAPIcall`)
+    fetch(`http://localhost:3000/api/makeAPIcall`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response error in background.js');
