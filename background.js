@@ -1,31 +1,24 @@
-// background.js
-
-// Function to make API call
-function makeAPICall() {
-  const apiUrl = '';
-
-  return fetch(apiUrl, {
-      method: 'GET',
-      headers: {
-          'Content-Type': 'application/json',
-      }
-  })
-  .then(response => response.json())
-  .catch(error => {
-      console.error('Error fetching data:', error);
-      throw error;
-  });
+function makeAPICall(sendResponse) {
+    fetch(`${process.env.NEXT_LOCAL_URL}/api/makeAPIcall`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response error in background.js');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('API Response:', data);
+        sendResponse({ data: data });
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+        sendResponse({ error: error.message });
+      });
 }
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'makeAPICall') {
-      makeAPICall()
-          .then(data => {
-              sendResponse({ success: true, data: data });
-          })
-          .catch(error => {
-              sendResponse({ success: false, error: error });
-          });
-      return true;
+    makeAPICall(sendResponse);
+    return true;
   }
 });
