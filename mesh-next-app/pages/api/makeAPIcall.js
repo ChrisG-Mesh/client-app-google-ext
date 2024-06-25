@@ -2,12 +2,11 @@
 
 export default async function handler(req, res) {
     // MESH_URL=https://sandbox-integration-api.meshconnect.com
-    const apiUrl = 'https://sandbox-integration-api.meshconnect.com/api/v1/linktoken'
+    // const apiUrl = 'https://sandbox-integration-api.meshconnect.com/api/v1/linktoken'
     // const apiUrl = 'https://mesh-transactions-dev-api.azurewebsites.net/api/transactions';
 
     try {
-        console.log("in the api call")
-        console.log(process.env.MESH_URL)
+        console.log("in the api call for linktoken")
         const response = await fetch(`${process.env.MESH_URL}/api/v1/linktoken`, {
             method: 'POST',
             headers: {
@@ -17,13 +16,13 @@ export default async function handler(req, res) {
                 'x-client-secret':process.env.MESH_APIKEY,
               },
               body: JSON.stringify({
-                userId: "cg_test_user",
+                userId: process.env.MESH_USERID,
               }),
             });
         
         
         if (!response) {
-            throw new Error('Network response was not ok in API call');
+            throw new Error('Network response error API call');
         }
 
         const data = await response.json();
