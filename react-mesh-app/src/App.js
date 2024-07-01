@@ -1,14 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import MakeAPICall from './components/MakeAPICall'; // Import MyComponent
+import OpenLink from './components/OpenLink';
 
 function App() {
   return (
-    <div className="App" style={{ width: '500px', height: '500px', padding: '20px' }}>
+    <div className="App" style={{ width: '700px', height: '700px', padding: '20px' }}>
       <header className="App-header">
         <h3>Mesh App Example</h3>
-        <MakeAPICall />
+        <OpenLink />
       </header>
     </div>
   );

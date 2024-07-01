@@ -3,12 +3,21 @@
   "description": "Testing React x Google Ext",
   "version": "1.0",
   "manifest_version": 3,
-  "action":{
+  "action": {
     "default_title": "React x Mesh Ext",
     "default_popup": "index.html",
-    "default_icon":{
+    "default_icon": {
       "16": "logo192.png",
       "128": "logo192.png"
     }
+  },
+  "permissions": [
+    "activeTab",
+    "http://localhost:3000/api/*",
+    "https://*.meshconnect.com/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "frame-ancestors https://verify.walletconnect.com https://*.meshconnect.com https://meshconnect.com;"
+
   }
 }
