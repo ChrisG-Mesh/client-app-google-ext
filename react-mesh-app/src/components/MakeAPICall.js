@@ -1,4 +1,3 @@
-// src/components/MyComponent.js
 import React, { useState } from 'react';
 
 const MakeAPICall = () => {
@@ -6,6 +5,7 @@ const MakeAPICall = () => {
 
   const fetchData = async () => {
     try {
+      // this routes to next.js server running in background
       const response = await fetch('http://localhost:3000/api/makeAPIcall', {
         method: 'POST',
         headers: {
@@ -33,10 +33,9 @@ const MakeAPICall = () => {
           <h1>Mesh Link UI</h1>
           <iframe
             id="mesh-link-iframe"
-            src={`https://web.getfront.com/b2b-iframe/b7007f87-c050-40cf-7777-08dc6f959a47/broker-connect?auth_code=${linkToken}`}
+            src={`https://web.getfront.com/b2b-iframe/b7007f87-c050-40cf-7777-08dc6f959a47/broker-connect?auth_code=${linkToken}`} //hardcoded iframe url
             width="100%"
             height="600px"
-            frameBorder="0"
           ></iframe>
         </div>
       ) : (
