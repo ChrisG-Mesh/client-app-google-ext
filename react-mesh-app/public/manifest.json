@@ -11,13 +11,12 @@
       "128": "logo192.png"
     }
   },
+  "background": {
+    "service_worker": "background.js"
+  },
   "permissions": [
     "activeTab",
     "http://localhost:3000/api/*",
     "https://*.meshconnect.com/*"
-  ],
-  "content_security_policy": {
-    "extension_pages": "frame-ancestors https://verify.walletconnect.com https://*.meshconnect.com https://meshconnect.com;"
-
-  }
+  ]
 }

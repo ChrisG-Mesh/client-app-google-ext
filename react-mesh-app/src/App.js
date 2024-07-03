@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import OpenLink from './components/OpenLink';
+import GetCatalog from './components/GetCatalog';
+import OpenLinkWebSDK from './components/OpenLinkWebSDK';
 
 function App() {
   return (
@@ -8,7 +9,8 @@ function App() {
       <header className="App-header">
         <h3>Mesh App Example</h3>
         <div className="OpenLink">
-          <OpenLink />
+          <GetCatalog />
+          <OpenLinkWebSDK />
         </div>
       </header>
     </div>

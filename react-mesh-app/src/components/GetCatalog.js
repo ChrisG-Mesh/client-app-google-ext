@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const OpenLink = () => {
+const GetCatalog = () => {
   const [iFrameUrl, setIFrameUrl] = useState(null);
   const [showIframe, setShowIframe] = useState(false);
 
@@ -46,4 +46,4 @@ const OpenLink = () => {
   );
 };
 
-export default OpenLink;
+export default GetCatalog;

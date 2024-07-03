@@ -23,6 +23,13 @@
 .OpenLink {
   text-align: center;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column; /* Stack components vertically */
+  align-items: center; /* Center components horizontally */
+}
+
+.OpenLink > * {
+  margin: 10px 0; /* Add space between each child element */
 }
 
 .OpenLink button {
