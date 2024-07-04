@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 
-const OpenLink = () => {
+const GetCatalog = () => {
   const [iFrameUrl, setIFrameUrl] = useState(null);
   const [showIframe, setShowIframe] = useState(false);
 
   const fetchData = async () => {
     try {
+      // this is referencing the endpoint used by the Next-app
       const response = await fetch('http://localhost:3000/api/getCatalogLink', {
         method: 'GET',
         headers: {
@@ -45,4 +46,4 @@ const OpenLink = () => {
   );
 };
 
-export default OpenLink;
+export default GetCatalog;

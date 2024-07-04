@@ -1,18 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import OpenLink from './components/OpenLink';
+import GetCatalog from './components/GetCatalog';
+import OpenLinkWebSDK from './components/OpenLinkWebSDK';
 
 function App() {
   return (
-    <div className="App" style={{ width: '700px', height: '700px', padding: '20px' }}>
+    <div className="App">
       <header className="App-header">
         <h3>Mesh App Example</h3>
-        <OpenLink />
+        <div className="OpenLink">
+          <GetCatalog />
+          <OpenLinkWebSDK />
+        </div>
       </header>
     </div>
   );
 }
-
 
 export default App;
