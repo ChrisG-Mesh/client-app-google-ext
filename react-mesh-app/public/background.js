@@ -1,5 +1,6 @@
 // background.js
 
+<<<<<<< HEAD
 console.log('Background script loaded');
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
@@ -40,4 +41,15 @@ socket.on('disconnect', () => {
 
 socket.on('connect_error', (error) => {
   console.error('Socket.IO connect error:', error);
+=======
+// Example: Log a message when the extension is installed or updated
+chrome.runtime.onInstalled.addListener((details) => {
+  console.log('Extension installed or updated', details);
+});
+
+// Example: Handle messages from other parts of the extension
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  console.log('Message received:', message);
+  sendResponse({ response: 'Message received in background script' });
+>>>>>>> 650d90848af78ed3b6177e1fcbeb6c25bb546de2
 });
