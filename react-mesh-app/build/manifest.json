@@ -1,0 +1,30 @@
+{
+  "name": "React x Mesh Ext",
+  "description": "Testing React x Google Ext",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "React x Mesh Ext",
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "logo192.png",
+      "128": "logo192.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "https://localhost:3000/*",
+    "https://*.meshconnect.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"]
+    }
+  ]
+}

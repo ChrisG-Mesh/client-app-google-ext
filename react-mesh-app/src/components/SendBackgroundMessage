@@ -1,0 +1,32 @@
+// SendBackgroundMessage.js
+
+import React from 'react';
+
+class SendBackgroundMessage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: '',
+      response: ''
+    };
+    this.sendMessageToBackground = this.sendMessageToBackground.bind(this);
+  }
+
+  sendMessageToBackground() {
+    chrome.runtime.sendMessage({ target: 'background', type: 'message', body: 'Hello from SendBackgroundMessage component' }, (response) => {
+      console.log('Response from background.js:', response);
+      this.setState({ response });
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.sendMessageToBackground}>Send Message to Background</button>
+        <p>Response from background: {this.state.response}</p>
+      </div>
+    );
+  }
+}
+
+export default SendBackgroundMessage;
