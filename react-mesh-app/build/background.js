@@ -1,43 +1,23 @@
-// background.js
-
-console.log('Background script loaded');
-
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  console.log('Message received in background.js:', message);
-
-  // Handle specific types of messages
-  if (message.type === 'testMessage') {
-    console.log('Received test message:', message.data);
-
-    // Example response back to the sender
-    sendResponse({ received: true });
-  }
-});
-
-// Example WebSocket connection setup
 import { io } from 'socket.io-client';
 
-const socket = io('http://localhost:3000/socket/api');
+const socket = io('http://localhost:3000', {
+  transports: ['websocket'], // Use only WebSocket transport
+});
 
 socket.on('connect', () => {
   console.log('Connected to Socket.IO server');
 });
 
-socket.on('event', (message) => {
-  console.log('Received event:', message);
-
-  // Forward message to content scripts if needed
-  chrome.tabs.query({}, (tabs) => {
-    tabs.forEach((tab) => {
-      chrome.tabs.sendMessage(tab.id, { type: message.type, data: message.payload });
-    });
-  });
+socket.on('event', (data) => {
+  console.log('Socket.IO event received:', data);
+  // Handle 'event' data as needed
 });
 
+socket.on('message', (message) => {
+  console.log('Message received from server:', message);
+  // Send the received message to App.js
+  chrome.runtime.sendMessage({ type: 'socketMessage', data: message });
+});
 socket.on('disconnect', () => {
-  console.log('Disconnected from Socket.IO server');
-});
-
-socket.on('connect_error', (error) => {
-  console.error('Socket.IO connect error:', error);
+  console.log('Socket.IO connection closed');
 });

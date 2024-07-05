@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import OpenLinkWebSDK from './components/OpenLinkWebSDK';
 
 function App() {
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    // Listener for messages from background.js
+    chrome.runtime.onMessage.addListener((message) => {
+      if (message.type === 'socketMessage') {
+        setMessages((prevMessages) => [...prevMessages, message.data]);
+      }
+    });
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -12,19 +23,12 @@ function App() {
         </div>
       </header>
       <div>
-      {/* <style>
-          #events {
-              width: 300px;
-              height: 200px;
-              border: 1px solid #ccc;
-              overflow-y: auto;
-          }
-      </style> */}
-      <body>
-          <h1>WebSocket Events</h1>
-          <div id="events"></div>
-          <script src="background.js"></script>
-      </body>
+        <h1>Messages from Background Script</h1>
+        <div id="messages">
+          {messages.map((msg, index) => (
+            <p key={index}>{msg}</p>
+          ))}
+        </div>
       </div>
     </div>
   );

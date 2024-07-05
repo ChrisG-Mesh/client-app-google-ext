@@ -1,0 +1,14 @@
+{
+  "name": "Your Extension Name",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Description of your extension",
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.bundle.js"
+  }
+}

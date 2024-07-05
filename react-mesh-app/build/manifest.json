@@ -12,19 +12,12 @@
     }
   },
   "background": {
-    "service_worker": "background.js"
-  },
+    "service_worker": "background.bundle.js",
+    "type": "module"
+},
   "permissions": [
     "activeTab",
-    "scripting",
-    "tabs",
-    "https://localhost:3000/*",
+    "http://localhost:3000/api/*",
     "https://*.meshconnect.com/*"
-  ],
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content-script.js"]
-    }
   ]
 }
