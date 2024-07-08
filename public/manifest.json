@@ -1,10 +1,10 @@
 {
-  "name": "React x Mesh Ext",
-  "description": "Testing React x Google Ext",
+  "name": "Google Ext x Mesh",
+  "description": "Google Ext implementing Mesh Web SDK",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
-    "default_title": "React x Mesh Ext",
+    "default_title": "Google Ext x Mesh",
     "default_popup": "index.html",
     "default_icon": {
       "16": "logo192.png",
