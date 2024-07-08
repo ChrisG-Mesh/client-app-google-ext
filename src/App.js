@@ -7,26 +7,32 @@ function App() {
 
   useEffect(() => {
     // Listener for messages from background.js
-    chrome.runtime.onMessage.addListener((message) => {
+    const handleMessage = (message) => {
       if (message.type === 'socketMessage') {
         setMessages((prevMessages) => [...prevMessages, message.data]);
       }
-    });
+    };
+
+    chrome.runtime.onMessage.addListener(handleMessage);
+
+    return () => {
+      chrome.runtime.onMessage.removeListener(handleMessage);
+    };
   }, []);
 
   return (
     <div className="App">
       <header className="App-header">
-        <h3>Mesh App Example</h3>
+        <h1>Google Extension x Mesh</h1>
         <div className="OpenLink">
           <OpenLinkWebSDK />
         </div>
       </header>
-      <div>
-        <h1>Messages from Background Script</h1>
-        <div id="messages">
+      <div className="Message-section">
+        <h3>Messages from Background Script</h3>
+        <div className="Message-list">
           {messages.map((msg, index) => (
-            <p key={index}>{msg}</p>
+            <div key={index} className="Message-item">{msg}</div>
           ))}
         </div>
       </div>
