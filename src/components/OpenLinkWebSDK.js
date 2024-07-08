@@ -14,7 +14,7 @@ const OpenLinkWebSDK = () => {
   return (
     <div>
       <button onClick={handleOpenPopupClick}>
-        Open Mesh
+        Open Mesh Catalog
       </button>
     </div>
   );

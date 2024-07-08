@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import OpenLinkWebSDK from './components/OpenLinkWebSDK';
+import DirectBrokerWebSDK from './components/DirectBrokerWebSDK';
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -27,9 +28,14 @@ function App() {
         <div className="OpenLink">
           <OpenLinkWebSDK />
         </div>
+        <div className="OpenLink">
+          <DirectBrokerWebSDK />
+        </div>
       </header>
       <div className="Message-section">
-        <h3>Events from Server:</h3>
+        <div className="Section-title">
+          <h3>Events from Server:</h3>
+        </div>
         <div className="Message-list">
           {messages.map((msg, index) => (
             <div key={index} className="Message-item">{msg}</div>
