@@ -1,33 +1,44 @@
-/* components/DirectBrokerWebSDK.css */
-
-div {
-  text-align: center;
-  margin-top: 20px;
+.direct-broker-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-label {
+.direct-broker-container label {
   display: block;
   margin-bottom: 10px;
-  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-select {
+.direct-broker-container select {
+  width: 100%;
   padding: 10px;
-  font-size: 1rem;
-  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-bottom: 10px;
 }
 
-button {
-  padding: 10px 20px;
+.direct-broker-container button.open-popup-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 1rem;
+  margin-top: 10px;
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+.direct-broker-container button.open-popup-button:hover {
   background-color: #0056b3;
 }

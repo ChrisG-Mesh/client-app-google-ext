@@ -1,6 +1,5 @@
-// components/DirectBrokerWebSDK.js
-import './DirectBrokerWebSDK.css';
 import React, { useState } from 'react';
+import './DirectBrokerWebSDK.css';
 
 const DirectBrokerWebSDK = () => {
   const [selectedBroker, setSelectedBroker] = useState('');
@@ -22,8 +21,8 @@ const DirectBrokerWebSDK = () => {
   };
 
   return (
-    <div>
-      <label htmlFor="broker-select">Choose a broker:</label>
+    <div className="direct-broker-container">
+      <label htmlFor="broker-select">Openlink direct to Broker:</label>
       <select id="broker-select" value={selectedBroker} onChange={handleBrokerChange}>
         <option value="">--Select a broker--</option>
         <option value="Coinbase">Coinbase</option>
@@ -31,7 +30,7 @@ const DirectBrokerWebSDK = () => {
         <option value="Robinhood">Robinhood</option>
       </select>
       {buttonVisible && (
-        <button onClick={handleOpenPopupClick}>
+        <button className="open-popup-button" onClick={handleOpenPopupClick}>
           Open {selectedBroker} Integration
         </button>
       )}
