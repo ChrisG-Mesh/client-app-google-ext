@@ -1,7 +1,8 @@
 import { io } from 'socket.io-client';
 
+// Hosting server on localhost 3000, adjust as needed
 const socket = io('http://localhost:3000', {
-  transports: ['websocket'], // Use only WebSocket transport
+  transports: ['websocket'],
 });
 
 socket.on('connect', () => {
@@ -10,7 +11,6 @@ socket.on('connect', () => {
 
 socket.on('event', (data) => {
   console.log('Socket.IO event received:', data);
-  // Handle 'event' data as needed
 });
 
 socket.on('message', (message) => {
