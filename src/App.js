@@ -29,7 +29,7 @@ function App() {
         </div>
       </header>
       <div className="Message-section">
-        <h3>Events from Server</h3>
+        <h3>Events from Server:</h3>
         <div className="Message-list">
           {messages.map((msg, index) => (
             <div key={index} className="Message-item">{msg}</div>
