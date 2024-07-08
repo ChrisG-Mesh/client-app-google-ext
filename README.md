@@ -44,14 +44,6 @@ Make sure you have Node.js and npm installed on your development machine. You ca
 
     This will create a `background.bundle.js` file using Webpack.
 
-3. **Move the background script:**
-
-    Move the `background.bundle.js` file to the `build` directory:
-
-    ```sh
-    mv dist/background.bundle.js build/
-    ```
-
 ### Loading the Extension
 
 1. **Open Chrome and navigate to the Extensions page:**
