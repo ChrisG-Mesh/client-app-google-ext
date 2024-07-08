@@ -23,13 +23,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Google Extension x Mesh</h1>
+        <h1>Google Ext x Mesh</h1>
         <div className="OpenLink">
           <OpenLinkWebSDK />
         </div>
       </header>
       <div className="Message-section">
-        <h3>Messages from Background Script</h3>
+        <h3>Events from Server</h3>
         <div className="Message-list">
           {messages.map((msg, index) => (
             <div key={index} className="Message-item">{msg}</div>

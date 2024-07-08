@@ -1,5 +1,5 @@
 
-# Client Side Google Ext x Mesh
+# Client Side - Google Ext x Mesh
 
 This README will guide you through the steps to get the extension up and running.
 
