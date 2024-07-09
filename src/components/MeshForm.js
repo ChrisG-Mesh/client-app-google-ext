@@ -25,9 +25,9 @@ const MeshForm = () => {
   };
 
   return (
-    <div className="direct-broker-container">
-      <label htmlFor="broker-select">Use Mesh Link:</label>
-      <select id="broker-select" value={selectedBroker} onChange={handleBrokerChange}>
+    <div className="mesh-form-container">
+      <label htmlFor="mesh-form-select">Use Mesh Link:</label>
+      <select id="mesh-form-select" value={selectedBroker} onChange={handleBrokerChange}>
         <option value="Coinbase">Coinbase</option>
         <option value="Binance">Binance</option>
         <option value="Robinhood">Robinhood</option>

@@ -1,0 +1,29 @@
+.Message-section {
+  margin-top: 30px;
+}
+
+.Message-section h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc; /* Separator line */
+}
+
+.Message-list {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.Message-item {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
