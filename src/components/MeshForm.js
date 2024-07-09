@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import './MeshForm.css';
+import config from '../config';
 
 const MeshForm = () => {
   const [selectedBroker, setSelectedBroker] = useState("Mesh Catalog");
   const [buttonVisible, setButtonVisible] = useState(true);
 
+  const baseUrl = config.BASE_URL; //define your URL in a config.js file in the src directory
+  
   const handleBrokerChange = (event) => {
     setSelectedBroker(event.target.value);
     setButtonVisible(event.target.value !== '');
@@ -12,10 +15,10 @@ const MeshForm = () => {
 
   const handleOpenPopupClick = () => {
     if (selectedBroker === "Mesh Catalog"){
-      window.open(`http://localhost:3000/meshPopup`, 'MeshLinkPopup', 'width=400,height=600');
+      window.open(`${baseUrl}/meshPopup`, 'MeshLinkPopup', 'width=400,height=600');
     }
     else {
-      window.open(`http://localhost:3000/meshPopup?broker=${selectedBroker}`, 'MeshLinkPopup', 'width=400,height=600');
+      window.open(`${baseUrl}/meshPopup?broker=${selectedBroker}`, 'MeshLinkPopup', 'width=400,height=600');
       popupWindow.document.title = 'Mesh Popup Window';
       popupWindow.document.body.style.backgroundColor = '#f0f0f0';
     }

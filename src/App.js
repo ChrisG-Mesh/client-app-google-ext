@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
 import './App.css';
 import MeshForm from './components/MeshForm';
 import EventsBox from './components/EventsBox';
-import LandingPage from './components/LandingPage';
 
 function App() {
   return (

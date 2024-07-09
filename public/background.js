@@ -1,7 +1,9 @@
 import { io } from 'socket.io-client';
+import config from '/src/config';
 
-// Hosting server on localhost 3000, adjust as needed
-const socket = io('http://localhost:3000', {
+const baseUrl = config.BASE_URL; //define your URL in a config.js file in the src directory
+
+const socket = io(`${baseUrl}`, {
   transports: ['websocket'],
 });
 
