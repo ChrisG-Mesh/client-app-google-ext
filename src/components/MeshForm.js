@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './DirectBrokerWebSDK.css';
+import './MeshForm.css';
 
-const DirectBrokerWebSDK = () => {
-  const [selectedBroker, setSelectedBroker] = useState('');
-  const [buttonVisible, setButtonVisible] = useState(false);
+const MeshForm = () => {
+  const [selectedBroker, setSelectedBroker] = useState("Mesh Catalog");
+  const [buttonVisible, setButtonVisible] = useState(true);
 
   const handleBrokerChange = (event) => {
     setSelectedBroker(event.target.value);
@@ -11,31 +11,32 @@ const DirectBrokerWebSDK = () => {
   };
 
   const handleOpenPopupClick = () => {
-    const popupWindow = window.open(`http://localhost:3000/meshPopup?broker=${selectedBroker}`, 'MeshLinkPopup', 'width=400,height=600');
-    if (popupWindow) {
+    if (selectedBroker === "Mesh Catalog"){
+      window.open(`http://localhost:3000/meshPopup`, 'MeshLinkPopup', 'width=400,height=600');
+    }
+    else {
+      window.open(`http://localhost:3000/meshPopup?broker=${selectedBroker}`, 'MeshLinkPopup', 'width=400,height=600');
       popupWindow.document.title = 'Mesh Popup Window';
       popupWindow.document.body.style.backgroundColor = '#f0f0f0';
-    } else {
-      alert('Popup blocked. Please enable popups for this site.');
     }
   };
 
   return (
     <div className="direct-broker-container">
-      <label htmlFor="broker-select">Openlink direct to Broker:</label>
+      <label htmlFor="broker-select">Use Mesh Link:</label>
       <select id="broker-select" value={selectedBroker} onChange={handleBrokerChange}>
-        <option value="">--Select a broker--</option>
         <option value="Coinbase">Coinbase</option>
         <option value="Binance">Binance</option>
         <option value="Robinhood">Robinhood</option>
+        <option value="Mesh Catalog">Mesh Catalog</option>
       </select>
       {buttonVisible && (
         <button className="open-popup-button" onClick={handleOpenPopupClick}>
-          Open {selectedBroker} Integration
+          Open {selectedBroker}
         </button>
       )}
     </div>
   );
 };
 
-export default DirectBrokerWebSDK;
+export default MeshForm;
