@@ -1,7 +1,17 @@
-
-# Client Side - Google Ext x Mesh
+# Client Side - Google Extension x Mesh
 
 This README will guide you through the steps to get the extension up and running.
+
+### Communication with Server App
+
+This extension communicates with a [Server app](https://github.com/ChrisG-Mesh/server-side-google-ext) using React with Next.js and the [Mesh Web SDK](https://docs.meshconnect.com/guides/getting-started). The communication involves sending and receiving events via Socket.io between the server and client apps.
+
+Ensure that the server app is active by running the following command in the server app directory:
+
+
+```sh
+npm run dev
+```
 
 ## Getting Started
 
@@ -25,24 +35,26 @@ Make sure you have Node.js and npm installed on your development machine. You ca
     ```sh
     npm install
     ```
+### Environment Variable
+
+To configure your project to communicate with the server, create a .env file in the root directory of your project. Define the necessary environment variables in this file. Here’s an example of what your .env file should include:
+
+    ```
+    # Example environment variables
+    REACT_APP_PORTAL_BASE_URL=http://localhost:example_url
+    ```
+
+Replace http://your-server-url.com with the actual URL where your server is currently hosted. This URL should point to the server app that your client-side extension interacts with. Adjust the variable names (REACT_APP_SERVER_URL) according to your project's conventions or requirements.
 
 ### Development
 
-1. **Build the React application:**
+1. **Build the React application and the background script:**
 
     ```sh
-    npm run build
+    npm run build-and-webpack
     ```
 
-    This will create a `build` directory with the production build of your app.
-
-2. **Build the background script:**
-
-    ```sh
-    npx webpack --config webpack.config.js
-    ```
-
-    This will create a `background.bundle.js` file using Webpack.
+    This will create a `build` directory with the production build of your app and the necessary Webpack background build.
 
 ### Loading the Extension
 
@@ -63,4 +75,3 @@ Make sure you have Node.js and npm installed on your development machine. You ca
 ### Usage
 
 Your extension should now be loaded in Chrome. You can interact with it through the Chrome toolbar.
-
