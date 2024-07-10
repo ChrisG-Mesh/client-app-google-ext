@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './MeshForm.css';
-import config from '../config';
 
 const MeshForm = () => {
   const [selectedBroker, setSelectedBroker] = useState("Mesh Catalog");
