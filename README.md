@@ -1,6 +1,6 @@
 # Client Side - Google Extension x Mesh
 
-This README will guide you through the steps to get the extension up and running with our Mesh Web SDK through a Google Extensin
+This README will guide you through the steps to get the extension up and running with our Mesh Web SDK through a Google Extension
 
 ### Communication with Server App
 
@@ -15,7 +15,7 @@ npm run dev
 
 ## Getting Started
 
-To get a local copy of the project up and running, follow these steps.
+To get a local copy of the Google Extension, follow these steps.
 
 ### Prerequisites
 
