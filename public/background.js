@@ -1,7 +1,6 @@
 import { io } from 'socket.io-client';
-import config from '/src/config';
 
-const baseUrl = config.BASE_URL; //define your URL in a config.js file in the src directory
+const baseUrl = process.env.REACT_APP_PORTAL_BASE_URL; //define your URL in a .env file in the src directory
 
 const socket = io(`${baseUrl}`, {
   transports: ['websocket'],

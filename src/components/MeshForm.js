@@ -6,7 +6,7 @@ const MeshForm = () => {
   const [selectedBroker, setSelectedBroker] = useState("Mesh Catalog");
   const [buttonVisible, setButtonVisible] = useState(true);
 
-  const baseUrl = config.BASE_URL; //define your URL in a config.js file in the src directory
+  const baseUrl = process.env.REACT_APP_PORTAL_BASE_URL; //define your URL in a .env file in the src directory
   
   const handleBrokerChange = (event) => {
     setSelectedBroker(event.target.value);
