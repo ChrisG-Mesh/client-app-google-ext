@@ -44,7 +44,7 @@ To configure your project to communicate with the server, create a .env file in 
     REACT_APP_PORTAL_BASE_URL=http://your-server-url.com
     ```
 
-Replace http://your-server-url.com with the actual URL where your server is currently hosted. This URL should point to the server app that your client-side extension interacts with. Adjust the variable names (`REACT_APP_SERVER_URL`) according to your project's conventions or requirements.
+Replace http://your-server-url.com with the actual URL where your server is currently hosted. This URL should point to the server app that your client-side extension interacts with.
 
 ### Development
 
