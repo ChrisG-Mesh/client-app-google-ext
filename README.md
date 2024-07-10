@@ -11,10 +11,6 @@ This extension communicates with a [server app](https://github.com/ChrisG-Mesh/s
 Before using the extension, ensure the server app is active by setting it up according to the instructions provided in the [server app repo](https://github.com/ChrisG-Mesh/server-side-google-ext)
 
 
-## Getting Started
-
-To get a local copy of the Google Extension, follow these steps.
-
 ### Prerequisites
 
 Make sure you have Node.js and npm installed on your development machine. You can download them from [nodejs.org](https://nodejs.org/).
