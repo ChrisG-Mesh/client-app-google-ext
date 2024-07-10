@@ -1,12 +1,12 @@
 # Client Side - Google Extension x Mesh
 
-This README will guide you through the steps to get the extension up and running.
+This README will guide you through the steps to get the extension up and running with our Mesh Web SDK
 
 ### Communication with Server App
 
 This extension communicates with a [Server app](https://github.com/ChrisG-Mesh/server-side-google-ext) using React with Next.js and the [Mesh Web SDK](https://docs.meshconnect.com/guides/getting-started). The communication involves sending and receiving events via Socket.io between the server and client apps.
 
-Ensure that the server app is active by running the following command in the server app directory:
+Ensure that the server app is active by running the following command in the server app directory before attempting to use the extension:
 
 
 ```sh
@@ -41,10 +41,10 @@ To configure your project to communicate with the server, create a .env file in 
 
     ```
     # Example environment variables
-    REACT_APP_PORTAL_BASE_URL=http://localhost:example_url
+    REACT_APP_PORTAL_BASE_URL=http://your-server-url.com
     ```
 
-Replace http://your-server-url.com with the actual URL where your server is currently hosted. This URL should point to the server app that your client-side extension interacts with. Adjust the variable names (REACT_APP_SERVER_URL) according to your project's conventions or requirements.
+Replace http://your-server-url.com with the actual URL where your server is currently hosted. This URL should point to the server app that your client-side extension interacts with. Adjust the variable names (`REACT_APP_SERVER_URL`) according to your project's conventions or requirements.
 
 ### Development
 
