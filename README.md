@@ -2,6 +2,8 @@
 
 This README will guide you through the steps to get the extension up and running with our Mesh Web SDK through a Google Extension
 
+![alt text](https://github.com/ChrisG-Mesh/client-app-google-ext/blob/main/ext_diagram.png?raw=true)
+
 ### Communication with Server App
 
 This extension communicates with a [server app](https://github.com/ChrisG-Mesh/server-side-google-ext) using React with Next.js and the [Mesh Web SDK](https://docs.meshconnect.com/guides/getting-started). The communication involves sending and receiving events via Socket.io between the server and client apps.
